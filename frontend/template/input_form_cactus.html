@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/form.css">
+    <script type="text/javascript" src="../config.js"></script>
+    <title>form input for cactus page</title>
+</head>
+<body>
+    <!--status bar-->
+    <div class="status-bar">
+        <div class="status-contain">
+            <a href="javascript: var url = url.url_frontend; console.log(url); location.href = url + `/template/index.html`">
+            <button class="btn status status">1</button></a>
+            <p>หน้าหลัก</p>
+            <a href="javascript: var url = url.url_frontend; console.log(url); location.href = url + `/template/input_form_cactus.html`">
+            <button class="btn status">2</button></a>
+            <p>เลือกข้อมูลที่ต้องการ</p>
+            
+            <button class="btn_disac status">3</button>
+            <p>แสดงผลแนะนำต้นไม้</p>
+        </div>
+    </div>
+
+    <!--input form-->
+    <div class="form_box">
+    <fieldset class="input-group">
+    <legend class="checkbox-group-legend-1">ต้นแคคตัสที่ต้องการ?</legend>
+    <p>กรุณากรอกข้อมูลให้ครบถ้วน ทั้ง 3 คำถาม</p>
+    <form id="input-form-cactus">
+     <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">การเข้าถึงของแสงแดด</legend>
+        <div class="checkbox">
+            <label for="expose" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="location" value="1" id="expose" onclick="undropGarden()"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/cactus_sun.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกกลางแจ้ง</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="inshade" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="location" value="1" id="inshade" onclick="dropGarden()"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/inshade.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกในอาคาร</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">รูปแบบการปลูก</legend>
+        <div for="pattern_pots" class="checkbox">
+            <label class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="pattern" value="1" id="pattern_pots"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/hanging-pots-cactus.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกในกระถาง</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="pattern_gradent" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="pattern" value="1" id="pattern_gradent" />
+                <span class="checkbox-tile" id="garden">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/cactus_sun.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกลงแปลง(สวน)</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="pattern_hanging" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="pattern" value="1" id="pattern_hanging"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/hanging-pots.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกแบบกระถางแขวน</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">ขนาดของต้นไม้</legend>
+        <div for="size_s" class="checkbox">
+            <label class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="size" value="1" id="size_s" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ขนาดเล็ก</span>
+                    <span class="text">เจริญเติบโตไม่เกิน 1 เมตร</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="size_m" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="size" value="1" id="size_m" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ขนาดกลาง</span>
+                    <span class="text">เจริญเติบโตในช่วง 1 - 2 เมตร</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="size_l" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="size" value="1" id="size_l"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ขนาดใหญ่</span>
+                    <span class="text">เจริญเติบโตในช่วง 2 - 3 เมตร</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <p>สามารถเลือกคุณสมบัติด้านล่าง ได้มากกว่า 1 คุณสมบัติ</p>
+    <fieldset class="checkbox-group">
+        <div class="checkbox">
+            <label for="aus" class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox-input" name="aus" value="1" id="aus" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ต้นไม้มงคล</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="puri" class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox-input" name="puri" value="1" id="puri" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ต้นไม้ฟอกอากาศ</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <div class="checkbox">
+            <label for="beginner" class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox-input" name="beginner" value="1" id="beginner" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/beginner.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">แคคตัสสำหรับมือใหม่</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="focus_flower" class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox-input" name="focus_flower" value="1" id="focus_flower" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/cactus_flower.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">แคคตัสที่เด่นด้านดอก</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="checkbox">
+    <button class="btn_submit" id="btn">เริ่มแนะนำต้นไม้สำหรับคุณ</button>
+    </div>
+    <div class="checkbox-1">
+        <button type="submit" class="btn_result" value="ดู" id="btn_2">ดูผลการแนะนำต้นไม้</button>
+    </div>
+    </form>
+    </fieldset>
+</div>
+</body>
+<script>
+    const btn_result = document.getElementById('btn_2');
+    const btn_submit = document.getElementById('btn');
+    //url backend api
+    var api_url = url.url_backend;
+    var url_front = url.url_frontend;
+    const endpoint = api_url + "/form/submitfrom_cactus";
+    
+    console.log("test");
+    const checkbox = [];
+    const typeList = [];
+
+    //document.querySelector('#btn_2').setAttribute('disabled', true);
+    document.getElementById("btn_2").style.visibility = "hidden";
+
+    if(btn_submit) {
+        btn.addEventListener("click", e => {
+        console.log("onClick")
+        e.preventDefault();
+
+        validate();
+
+        console.log("out")
+
+        var checkPattern = document.getElementsByName('pattern');
+        /*expose , inshade*/
+        var checkSun = document.getElementsByName('location');
+        var checkBegin = document.getElementsByName('beginner');
+        var checkF_flower = document.getElementsByName('focus_flower');
+        var checkSize = document.getElementsByName('size');
+        var checkAus = document.getElementsByName('aus');
+        var checkPurify = document.getElementsByName('puri');
+
+        var run = 0;
+        var checkList = [checkPattern, checkSun, checkBegin, checkF_flower,checkPurify, checkAus, checkSize];
+        
+        console.log(typeList)
+
+        while (run < checkList.length) {
+        var list = checkList[run]
+        for(var i = 0; i < list.length; i++) {
+            console.log("in")
+            if(list[i].checked == true) {
+                checkbox.push(parseInt(list[i].value));
+            } else {
+                checkbox.push(0);
+            }
+        }
+        run = run+1;
+        console.log(run)
+        } 
+        console.log(checkbox)
+
+        /* send input matrix to backend api */
+        /* pots, gardent, hanging, in_shade, beginner, expose, flower, puri, aus, s, m, l */
+
+        fetch(endpoint, {
+            method: "post",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify({'pots': {'pots': parseInt(checkbox[0])}, 'garden': {'garden': parseInt(checkbox[1])}, 'hanging': {'hanging': parseInt(checkbox[2])},  'inshade': {'inshade': parseInt(checkbox[4])}, 'beginner': {'beginner': parseInt(checkbox[5])}, 'expose': {'exposestosun': parseInt(checkbox[3])}, 'flower': {'flower': parseInt(checkbox[6])}, 'purify': {'purify': parseInt(checkbox[7])}, 'aus': {'aus': parseInt(checkbox[8])}, 's_s': {'s_s':parseInt(checkbox[9])}, 's_m': {'s_m': parseInt(checkbox[10])}, 's_l': {'s_l': parseInt(checkbox[11])}})
+        }).catch(console.error)
+        //.then(window.location.assign('http://127.0.0.1:5500/form/recomendation_page.html'))
+        console.log(JSON.stringify({'pots': {'pots': parseInt(checkbox[0])}, 'garden': {'garden': parseInt(checkbox[1])}, 'hanging': {'hanging': parseInt(checkbox[2])},  'inshade': {'inshade': parseInt(checkbox[4])}, 'beginner': {'beginner': parseInt(checkbox[5])}, 'expose': {'exposestosun': parseInt(checkbox[3])}, 'flower': {'flower': parseInt(checkbox[6])}, 'purify': {'purify': parseInt(checkbox[7])}, 'aus': {'aus': parseInt(checkbox[8])}, 's_s': {'s_s':parseInt(checkbox[9])}, 's_m': {'s_m': parseInt(checkbox[10])}, 's_l': {'s_l': parseInt(checkbox[11])}}))
+        active_btn2();
+    })
+  }
+
+  if(btn_result){
+        btn_2.addEventListener("click", e => {
+        console.log("onClick")
+        e.preventDefault();
+            window.open(url_front + '/template/recomendation_result_cactus.html');
+        })
+    }
+
+    function validate(){
+        var message = [];
+        if(document.getElementById('pattern_hanging').checked === false && document.getElementById('pattern_pots').checked === false && document.getElementById('pattern_gradent').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลรูปแบบการปลูกที่ต้องการ');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลรูปแบบการปลูกที่ต้องการ');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('inshade').checked === false && document.getElementById('expose').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลข้อมูลลักษณะการเข้าถึงของแสงแดด');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลประเภทต้นไม้ที่ต้องการ');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('size_s').checked === false && document.getElementById('size_m').checked === false && document.getElementById('size_l').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลขนาดของต้นไม้');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลขนาดของต้นไม้');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+
+        if(message.length > 0 && message.length <= 2){
+            alert(message.join("\n"));
+            window.location.reload(url_front + '/template/input_form_cactus.html')
+        }
+        if(message.length > 2){
+            alert("คุณกรอกข้อมูลไม่ครบถ้วน กรุณากรอกข้อมูลให้ครบถ้วน [ลักษณะแสง รูปแบบการปลูก ขนาดของต้นไม้]");
+            window.location.reload(url_front + '/template/input_form_cactus.html')
+        }
+    }
+
+    function dropGarden(){
+        //document.getElementById('pattern_gradent').disabled = !this.checked
+        document.getElementById("garden").style.visibility = "hidden";
+        alert('หากคุณเลือกสถานที่ปลูกเป็นในร่มหรือในอาคาร [จะไม่สามารถเลือกการปลูกแบบในสวนได้]')
+    }
+
+    function undropGarden(){
+        //document.getElementById('pattern_gradent').disabled = !this.checked
+        document.getElementById("garden").style.visibility = "visible";
+    }
+
+    function active_btn2(){
+        //disable submit btn
+        document.getElementById("btn").style.visibility = "hidden";
+        document.querySelector('#btn').setAttribute('disabled', true);
+        //activate result btn
+        document.getElementById("btn_2").style.visibility = "visible";
+        //document.querySelector('#btn_2').setAttribute('disabled', false);
+    }
+
+
+</script>
+</html>

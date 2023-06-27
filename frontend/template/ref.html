@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>reference page</title>
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="../images/plant_icon.png" alt="" />
+            <span>
+              Ki4U
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="http://127.0.0.1:5500/template/index.html">หน้าหลัก</a>
+                <a href="http://127.0.0.1:5500/template/ref.html">แหล่งที่มาของข้อมูล</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+  <section class="about_section layout_margin">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                แหล่งที่มา <br>
+                ของข้อมูล 
+              </h2>
+              <hr>
+            </div>
+            <p>
+              <b>ข้อมูลต้นไม้ :</b>
+              </br>คลังข้อมูลพันธุ์ไม้ เกษตรทูเดย์ <i>(https://kaset.today/)</i>
+              </br>เว็บไซต์บ้านและสวน <i>(https://www.baanlaesuan.com/)</i>
+              </br>ฐานข้อมูลเกษตรดิจิทัล <i>(https://data.addrun.org/plant/)</i>
+              </br>
+              </br>
+              <b>แหล่งข้อมูลเกี่ยวกับการพัฒนา :</b>
+              </br>How to Make a Working Pagination | With Examples - Functional With UI Cards - HTML, CSS & Jquery
+              <a href="https://www.youtube.com/watch?v=GQejHTFwyLo&t=1178s">Youtube</a>
+              </br>Fastapi RESTful API CRUD sorting, paging, and filtering | Part 1 Backend
+              <a href="https://www.youtube.com/watch?v=-e7X5KqVHvM&t=1s">Youtube</a>
+              </br>Design Templates by <a href="https://html.design/">Free Html Templates</a>
+              </br>
+              </br>
+              <b>แหล่งที่มาของสื่อ :</b>
+              </br>SVG REPO <i>(https://www.svgrepo.com/)</i>
+              </br>Unsplash <i>(https://unsplash.com/)</i>
+              </br>Flaticon <i>(https://www.flaticon.com/)</i>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="../images/photo_garden_room.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <div class="social_container">
+      <h4>
+        เกี่ยวกับผู้พัฒนา
+      </h4>
+      <p>
+        King Mongkut's Institute of Technology Ladkrabang
+      </br> สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+      </br> 62050246@kmitl.ac.th (ผู้พัฒนา)
+      </p>
+    </div>
+    <p>
+      &copy; 2023 CS-KMITL. Design Templates by
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document
+        .querySelector(".custom_menu-btn")
+        .classList.toggle("menu_btn-style");
+    }
+  </script>
+
+  <!-- owl carousel script -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 35,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>

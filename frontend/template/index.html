@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Ki4You_Homepage</title>
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+  <script type="text/javascript" src="../config.js"></script>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="../images/plant_icon.png" alt="" />
+            <span>
+              Ki4U
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); location.href = url_f + `/template/index.html`">หน้าหลัก</a>
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); location.href = url_f + `/template/ref.html`">แหล่งที่มาของข้อมูล</a>
+              </div>
+            </div>
+          </div>
+          <!--search bar-->
+          <div class="search-container">
+            <form name="search_keyword" action="javascript:setActionSearch()">
+              <input type="text" placeholder="ค้นหาต้นไม้ด้วย..ชื่อต้นไม้" name="search" id="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+          <!--end search bar-->
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="side_heading">
+        <h5>
+          T
+          R
+          E
+          E
+          4
+          Y
+          O
+          U
+        </h5>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 offset-md-1">
+            <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                  01
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                  02
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                  03
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                  04
+                </li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="img-box b-1">
+                    <img src="../images/flower_2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box b-2">
+                    <img src="../images/leaf_4.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box b-3">
+                    <img src="../images/cactus_1.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box b-4">
+                    <img src="../images/all_1.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel_btn-box">
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class=" col-md-5 offset-md-1">
+            <div class="detail-box">
+              <h1>
+                ต้นไม้ <br>
+                สำหรับคุณ
+              </h1>
+              <p>
+                Ki4You คือ เว็บแอปพลิเคชันที่จะช่วยให้ผู้คนสามารถคนหาต้นไม้ที่เหมาะสมกับความต้องการของคุณได้ 
+                โดยอาศัยข้อมูลความต้องการต้นไม้เพื่อแนะนำต้นไม้ที่เหมาะสม 
+              </p>
+
+              <div class="btn-box">
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); location.href = url_f + `/template/input_form.html`" class="btn-1">
+                  แนะนำไม้ประดับของคุณ
+                </a>
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); location.href = url_f + `/template/input_form_cactus.html`" class="btn-2">
+                  แนะนำแคคตัสของคุณ
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                เกี่ยว <br>
+                กับ <br>
+                ไม้ฟอกอากาศ
+              </h2>
+              <hr>
+            </div>
+            <p>
+              ต้นไม้ฟอกอากาศ คือ ต้นไม้ที่ช่วยในการดักจับฝุ่น </br>สารพิษหรือมลพิษทางอากาศต่าง ๆ </br>แล้วแลกเปลี่ยนออกมาเป็นอากาศบริสุทธิ์
+             </br>ทำให้ต้นไม้ฟอกอากาศเป็นตัวเลือกที่น่าสนใจ </br>ในการมองหาไม้ประดับตกแต่งที่มากประโยชน์
+            </p>
+            <div class="btn-box">
+              <a href="javascript: var url_f = url.url_frontend; console.log(url_f); window.open(url_f + `/template/purify_page_p/index_purify.html`)"  class="btn-2">
+                ต้นไม้ฟอกอากาศต่าง ๆ
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="../images/home_garden.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!--start our tree-->
+
+    <section class="dish_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="dish_container">
+              <div class="box">
+                <img src="../images/cactus_h1.jpg" alt="">
+              </div>
+              <div class="box">
+                <img src="../images/all_1.jpg" alt="">
+              </div>
+              <div class="box">
+                <img src="../images/home_garden.jpg" alt="">
+              </div>
+              <div class="box">
+                <img src="../images/flower_2.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <hr>
+                <h2>
+                  ต้นไม้ <br>
+                  ของ <br>
+                  เรา
+                </h2>
+              </div>
+              <p>
+                เว็บแอปพลิเคชัน Ki4You </br>
+                ได้ทำการรวบรวมข้อมูลไม้ประดับนานาชนิด ๆ ไว้ให้คุณ </br>
+                ทั้งไม้ในกลุ่มไม้ดอก ไม้ประดับ หรือกลุ่มแคคตัส </br>
+                คลิ๊กด้านล่างเพื่อดูไม้ประดับในกลุ่มต่าง ๆ
+              </p>
+              <div class="btn-container">
+              <div class="btn-box">
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); window.open(url_f + `/template/all_data/all_data_flower.html`)" class="btn-f">
+                  ไม้ดอกทั้งหมด
+                </a>
+              </div>
+
+              <div class="btn-box">
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); window.open(url_f + `/template/all_data/all_data_leaf.html`)" class="btn-l">
+                  ไม้ใบทั้งหมด
+                </a>
+              </div>
+
+              <div class="btn-box">
+                <a href="javascript: var url_f = url.url_frontend; console.log(url_f); window.open(url_f + `/template/all_data/all_data_cactus.html`)" class="btn-c">
+                  แคคตัสทั้งหมด
+                </a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!--end our tree-->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <div class="social_container">
+      <h4>
+        เกี่ยวกับผู้พัฒนา
+      </h4>
+      <p>
+        King Mongkut's Institute of Technology Ladkrabang
+      </br> สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+      </br> 62050246@kmitl.ac.th (ผู้พัฒนา)
+      </p>
+    </div>
+    <p>
+      &copy; 2023 CS-KMITL. Design Templates by
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+
+  <script>
+
+    function setActionSearch() {
+      var url_front = url.url_frontend;
+      console.log('url_front');
+      let key = document.getElementById('search').value;
+      console.log(key);
+      const name = encodeURIComponent(key);
+      console.log(name);
+      localStorage.clear();
+      localStorage.setItem('name_search', name);
+      window.open(url_front + '/template/search_index.html');
+    }
+  </script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document
+        .querySelector(".custom_menu-btn")
+        .classList.toggle("menu_btn-style");
+    }
+  </script>
+
+  <!-- owl carousel script -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 35,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>

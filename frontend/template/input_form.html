@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/form.css">
+    <script type="text/javascript" src="../config.js"></script>
+    <title>form input page</title>
+    
+<body>
+
+<div class="status-bar">
+    <div class="status-contain">
+        <a href="javascript: var url = url.url_frontend; console.log(url); location.href = url + `/template/index.html`">
+        <button class="btn status status">1</button></a>
+        <p>หน้าหลัก</p>
+        <a href="javascript: var url = url.url_frontend; console.log(url); location.href = url + `/template/input_form.html`">
+        <button class="btn status">2</button></a>
+        <p>เลือกข้อมูลที่ต้องการ</p>
+        
+        <button class="btn_disac status">3</button>
+        <p>แสดงผลแนะนำต้นไม้</p>
+    </div>
+</div>
+<!--input form start-->
+<div class="form_box">
+    <fieldset class="input-group">
+    <legend class="checkbox-group-legend-1">ไม้ประดับที่ต้องการ?</legend>
+    <p>กรุณากรอกข้อมูลให้ครบถ้วน ทั้ง 6 คำถาม</p>
+    <form id="input-form">
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">ประเภทต้นไม้</legend>
+        <div class="checkbox">
+            <label for="type_flower" class="checkbox-wrapper" >
+                <input type="radio" class="checkbox-input" name="type" value="flower" id="type_flower"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/flower1.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ไม้ดอกประดับ</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="type_leaf" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="type" value="leaf" id="type_leaf" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/leaf1.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ไม้ใบประดับ</span>
+                </span>
+            </label>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">สถานที่ในการปลูก</legend>
+        <div class="checkbox">
+            <label for="location_outdoor" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="location" value="1" id="location_outdoor" onclick="undropGarden()"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ปลูกกลางแจ้ง</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="location_indoor" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="location" value="1" id="location_indoor" onclick="dropGarden()"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ปลูกในอาคาร หรือที่ร่ม</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="location_semi" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="location" value="1" id="location_semi" onclick="undropGarden()"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ปลูกกึ่งภายนอก</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">รูปแบบการปลูก</legend>
+        <div for="pattern_pots" class="checkbox">
+            <label class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="pattern" value="1" id="pattern_pots" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/pots.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกในกระถาง</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="pattern_gradent" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="pattern" value="1" id="pattern_gradent"/>
+                <span class="checkbox-tile" id="garden">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/flower-garden.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกลงแปลงดิน(สวน)</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="pattern_hanging" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="pattern" value="1" id="pattern_hanging" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                        <img src="../images/svg/hanging-pots.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ปลูกแบบกระถางแขวน</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">ความถี่ในการรดน้ำต้นไม้</legend>
+        <div class="checkbox">
+            <label for="water_lit" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="water" value="1" id="water_lit" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/water_little.svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">น้อยกว่า 1 ครั้ง/สัปดาห์</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="water_mid" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="water" value="1" id="water_mid"  />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/two-raindrop.svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">2-3 ครั้ง/สัปดาห์</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="water_freq" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="water" value="1" id="water_freq" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/three-rain-drops.svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">ทุกวัน</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">การเข้าถึงของแสงแดด</legend>
+        <div class="checkbox">
+            <label for="sun_faintly" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="sun" value="1" id="sun_faintly"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/sun-cloudy.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">มีแสงแบบรำไร</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="sun_half" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="sun" value="1" id="sun_half" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/sun_half.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">มีแสงครึ่งวันเช้า</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="sun_full" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="sun" value="1" id="sun_full" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-icon">
+                            <img src="../images/svg/sun_full.svg" width="50" height="50" fill="currentColor" viewBox="0 0 256 256"/>
+                    </span>
+                    <span class="checkbox-label">มีแสงแดดตลอดวัน</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <fieldset class="checkbox-group">
+        <legend class="checkbox-group-legend">ขนาดของต้นไม้</legend>
+        <div for="size_s" class="checkbox">
+            <label class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="size" value="1" id="size_s" title="ต้นไม้ที่เจริญเติบโตไม่เกิน 3 เมตร"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ขนาดเล็ก</span>
+                    <span class="text">เจริญเติบโตไม่เกิน 3 เมตร</span>
+                    <span class="text-1">(หรือเลื้อยไม่เกิน 10 เมตร)</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="size_m" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="size" value="1" id="size_m" title="ต้นไม้ที่เจริญเติบโตในช่วง 3 - 6 เมตร"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ขนาดกลาง</span>
+                    <span class="text">เจริญเติบโตในช่วง 3 - 6 เมตร</span>
+                    <span class="text-1">(หรือเลื้อยไม่เกิน 20 เมตร)</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="size_l" class="checkbox-wrapper">
+                <input type="radio" class="checkbox-input" name="size" value="1" id="size_l" title="ต้นไม้ที่เจริญเติบโตในช่วง 6 - 10 เมตร"/>
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ขนาดใหญ่</span>
+                    <span class="text">เจริญเติบโตในช่วง 6 - 10 เมตร</span>
+                    <span class="text-1">(หรือเลื้อยไม่เกิน 30 เมตร)</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <p>สามารถเลือกคุณสมบัติด้านล่าง ได้มากกว่า 1 คุณสมบัติ</p>
+    <fieldset class="checkbox-group">
+        <div class="checkbox">
+            <label for="aus" class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox-input" name="aus" value="1" id="aus" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ต้นไม้มงคล</span>
+                </span>
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="puri" class="checkbox-wrapper">
+                <input type="checkbox" class="checkbox-input" name="puri" value="1" id="puri" />
+                <span class="checkbox-tile">
+                    <span class="checkbox-label">ต้นไม้ฟอกอากาศ</span>
+                </span>
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="checkbox">
+    <button type="submit" class="btn_submit" value="ค้นหาต้นไม้" id="btn">เริ่มแนะนำต้นไม้สำหรับคุณ</button>
+    </div>
+    <div class="checkbox-1">
+        <button type="submit" class="btn_result" value="ดู" id="btn_2" activate>ดูผลการแนะนำต้นไม้</button>
+    </div>
+    </form>
+    </fieldset>
+</div>
+
+    <!--input form end-->
+</body>
+<script>
+    const btn_result = document.getElementById('btn_2');
+    const btn_submit = document.getElementById('btn');
+    //url
+    var api_url = url.url_backend;
+    var url_front = url.url_frontend;
+    const endpoint = api_url + "/form/submitform";
+    
+    console.log("test");
+    const checkbox = [];
+    const typeList = [];
+
+    //document.querySelector('#btn_2').setAttribute('disabled', true);
+    document.getElementById("btn_2").style.visibility = "hidden";
+
+    if(btn_submit) {
+        btn.addEventListener("click", e => {
+        console.log("onClick")
+        e.preventDefault();
+        validate();
+
+        console.log(document.getElementById('pattern_hanging').checked)
+        console.log("out")
+
+        var checkType = document.querySelector('input[type="radio"]:checked').value;
+        typeList.push(checkType)
+        var checkPattern = document.getElementsByName('pattern');
+        var checkLo = document.getElementsByName('location');
+        var checkWater = document.getElementsByName('water');
+        var checkSun = document.getElementsByName('sun');
+        var checkSize = document.getElementsByName('size');
+        var checkAus = document.getElementsByName('aus');
+        var checkPurify = document.getElementsByName('puri');
+
+        var run = 0;
+        var checkList = [checkLo, checkPattern, checkWater, checkSun, checkPurify, checkSize, checkAus];
+        
+        console.log(typeList)
+
+        while (run < checkList.length) {
+        var list = checkList[run]
+        for(var i = 0; i < list.length; i++) {
+            console.log("in")
+            if(list[i].checked == true) {
+                checkbox.push(parseInt(list[i].value));
+            } else {
+                checkbox.push(0);
+            }
+        }
+        run = run+1;
+        console.log(run)
+        } 
+        checkbox.push(checkType);
+        console.log(checkbox)
+
+        /* send input matrix to backend api */
+        /* outdoor, indoor, semi, pots, gardent, hanging, water_little, mid, freq, sun_full, half, faintly, puri, aus, s, m, l */
+
+        fetch(endpoint, {
+            method: "post",
+            redirect: "follow",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify({'types': {'types': checkbox[17]}, 'outdoor' : {'outdoor': parseInt(checkbox[0])}, 'indoor': {'indoor': parseInt(checkbox[1])}, 'semi': {'semi': parseInt(checkbox[2])}, 'pots': {'pots': parseInt(checkbox[3])}, 'garden': {'garden': parseInt(checkbox[4])}, 'hanging': {'hanging': parseInt(checkbox[5])}, 'little': {'little': parseInt(checkbox[6])}, 'mid': {'mid': parseInt(checkbox[7])}, 'freq': {'freq': parseInt(checkbox[8])}, 'full': {'full': parseInt(checkbox[11])}, 'half': {'half': parseInt(checkbox[10])}, 'faintly': {'faintly': parseInt(checkbox[9])}, 'purify': {'purify': parseInt(checkbox[12])}, 'aus': {'aus': parseInt(checkbox[16])}, 's_s': {'s_s':parseInt(checkbox[13])}, 's_m': {'s_m': parseInt(checkbox[14])}, 's_l': {'s_l': parseInt(checkbox[15])}})
+        }).catch(console.error)
+
+
+        console.log(JSON.stringify({'types': {'types': checkbox[17]}, 'outdoor' : {'outdoor': parseInt(checkbox[0])}, 'indoor': {'indoor': parseInt(checkbox[1])}, 'semi': {'semi': parseInt(checkbox[2])}, 'pots': {'pots': parseInt(checkbox[3])}, 'garden': {'garden': parseInt(checkbox[4])}, 'hanging': {'hanging': parseInt(checkbox[5])}, 'little': {'little': parseInt(checkbox[6])}, 'mid': {'mid': parseInt(checkbox[7])}, 'freq': {'freq': parseInt(checkbox[8])}, 'full': {'full': parseInt(checkbox[11])}, 'half': {'half': parseInt(checkbox[10])}, 'faintly': {'faintly': parseInt(checkbox[9])}, 'purify': {'purify': parseInt(checkbox[12])}, 'aus': {'aus': parseInt(checkbox[16])}, 's_s': {'s_s':parseInt(checkbox[13])}, 's_m': {'s_m': parseInt(checkbox[14])}, 's_l': {'s_l': parseInt(checkbox[15])}})) 
+        active_btn2();
+    }) 
+    }
+    
+    if(btn_result){
+        btn_2.addEventListener("click", e => {
+        console.log("onClick")
+        e.preventDefault();
+            //window.location.assign('http://127.0.0.1:5500/form/recomendation_page.html');
+            window.open(url_front + '/template/recomendation_result.html');
+        })
+    }
+
+    function validate(){
+        var message = [];
+        if(document.getElementById('pattern_hanging').checked === false && document.getElementById('pattern_pots').checked === false && document.getElementById('pattern_gradent').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลรูปแบบการปลูกที่ต้องการ');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลรูปแบบการปลูกที่ต้องการ');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('type_flower').checked === false && document.getElementById('type_leaf').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลประเภทต้นไม้ที่ต้องการ');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลประเภทต้นไม้ที่ต้องการ');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('location_outdoor').checked === false && document.getElementById('location_indoor').checked === false && document.getElementById('location_semi').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลสถานที่ในการปลูก');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลสถานที่ในการปลูก');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('water_lit').checked === false && document.getElementById('water_mid').checked === false && document.getElementById('water_freq').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลความถี่การรดน้ำ');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลความถี่การรดน้ำ');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('sun_faintly').checked === false && document.getElementById('sun_half').checked === false && document.getElementById('sun_full').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลรูปแบบแสงแดด');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลรูปแบบแสงแดด');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+        if(document.getElementById('size_s').checked === false && document.getElementById('size_m').checked === false && document.getElementById('size_l').checked === false){
+            message.push('-คุณยังไม่ได้ใส่ข้อมูลขนาดของต้นไม้');
+            //alert('คุณยังไม่ได้ใส่ข้อมูลขนาดของต้นไม้');
+            //window.location.reload('http://127.0.0.1:5500/form/input_form.html')
+        }
+
+        if(message.length > 0 && message.length <= 3){
+            alert(message.join("\n"));
+            window.location.reload(url_front + '/template/input_form.html')
+        }
+        if(message.length > 3){
+            alert("คุณกรอกข้อมูลไม่ครบถ้วน กรุณากรอกข้อมูลให้ครบถ้วน");
+            window.location.reload(url_front + '/template/input_form.html')
+        }
+    }
+
+    function dropGarden(){
+        //document.getElementById('pattern_gradent').disabled = !this.checked
+        document.getElementById("garden").style.visibility = "hidden";
+        alert('หากคุณเลือกสถานที่ปลูกเป็นในร่มหรือในอาคาร [จะไม่สามารถเลือกการปลูกแบบในสวนได้]')
+    }
+
+    function undropGarden(){
+        //document.getElementById('pattern_gradent').disabled = !this.checked
+        document.getElementById("garden").style.visibility = "visible";
+    }
+
+    function active_btn2(){
+        //disable submit btn
+        document.getElementById("btn").style.visibility = "hidden";
+        document.querySelector('#btn').setAttribute('disabled', true);
+        //activate result btn
+        document.getElementById("btn_2").style.visibility = "visible";
+        //document.querySelector('#btn_2').setAttribute('disabled', false);
+    }
+
+</script>
+</html>

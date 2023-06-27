@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>purify page</title>
+    <script src="../../js/purify/index_purify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../../config.js"></script>
+    <link rel="stylesheet" href="../../css/purify_styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-content">
+            <div class="header">
+            <div class="card-info">
+                <h1>.. ต้นไม้ที่สามารถฟอกมลพิษเหล่านี้ได้ ..</h1>
+            </div>
+        </div>
+            <!--P01-->
+            <div class="card" onclick="call_tree_purify('p01')">
+                <div class="card-info">
+                    <h3>ฟอกสารจำพวกฟอร์มาลดีไฮด์</h3>
+                    <p>สามารถฟอกสารที่พบในชีวิตประจำวันเหล่านี้ได้ เช่น กระดาษ ไม้อัด ผ้าม่าน หมอนใยสังเคราะห์ สีและสารเคลือบต่าง ๆ กาว 
+                    น้ำยาซักล้าง เครื่องสำอาง รวมถึงการปล่อยมลพิษจากการเผาไหม้ของเตาแก๊สหรือควันบุหรี่</p>
+                </div>
+            </div>
+            <!--P02-->
+            <div class="card" onclick="call_tree_purify('p02')">
+                <div class="card-info">
+                    <h3>ฟอกสารจำพวกไซลีน</h3>
+                    <p>สามารถฟอกสารที่ปนเปื้อนในอากาศได้ รวมถึงที่พบได้ในของใช้ในบ้าน เช่น สารทำความสะอาด แลกเกอร์ กาว น้ำยาล้างเล็บ เป็นต้น</p>
+                </div>
+            </div>
+            <!--P03-->
+            <div class="card" onclick="call_tree_purify('p03')">
+                <div class="card-info">
+                    <h3>ฟอกสารจำพวกเบนซิน</h3>
+                    <p>สามารถช่วยฟอกสารที่มักพบอยู่ในสิ่งของในชีวิตประจำวัน เช่น หมึกพิมพ์ สีทาบ้าน วอลเปเปอร์ ผงซักฟอก 
+                    สารชะล้างต่าง ๆ จอคอมพิวเตอร์ รวมถึงควันบุหรี่</p>
+                </div>
+            </div>
+            <!--P04-->
+            <div class="card" onclick="call_tree_purify('p04')">
+                <div class="card-info">
+                    <h3>ฟอกสารจำพวกไตรคลอโรเอทิลีน</h3>
+                    <p>สามารถช่วยฟอกสารที่อยู่ในสิ่งของในชีวิตประจำวัน เช่น ผ้าม่าน น้ำยาลบคำผิด น้ำยาล้างฟิล์ม ยาฆ่าแมลง 
+                    น้ำยาทำความสะอาด น้ำยาซักแห้ง(ลบรอยเปื้อนบนผ้า) กาว น้ำยาลบสี</p>
+                </div>
+            </div>
+            <!--P05-->
+            <div class="card" onclick="call_tree_purify('p05')">
+                <div class="card-info">
+                    <h3>ฟอกสารจำพวกแอมโมเนีย</h3>
+                    <p>สามารถช่วยฟอกสารที่พบได้บ่อยในชีวิตประจำวัน เช่น ผลิตภัณฑ์ทำความสะอาด น้ำยาเช็ดกระจก น้ำยาเคลือบเงา ปุ๋ย เป็นต้น</p>
+                </div>
+            </div>
+            <!--P010-->
+            <div class="card" onclick="call_tree_purify('p10')">
+                <div class="card-info">
+                    <h3>ช่วยดูดซับมลพิษ</h3>
+                    <p>มีความสามารถช่วยฟอกมลพิษที่ปนเปื้อนอยู่ในอากาศได้ดี</p>
+                </div>
+            </div>
+            <!--P11-->
+            <div class="card">
+                <div class="card-info" onclick="call_tree_purify('p11')">
+                    <h3>ช่วยดูดซับฝุ่น</h3>
+                    <p>ช่วยดูดซับความชื้นที่ปนเปื้อนฝุ่น ปนเปื้อนสารเคมีในอากาศได้ดี</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function call_tree_purify(indexPollutions){
+        localStorage.clear();
+        localStorage.setItem('indexPollution', indexPollutions);
+        console.log(indexPollutions);
+        var url_front = url.url_frontend;
+        window.open(url_front + '/template/purify_page.html');
+    }
+</script>
+</html>
